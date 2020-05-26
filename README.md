@@ -48,7 +48,9 @@ Example command to train ADRMine given the train sentences and gold annotations:
 
 Output:
 The output file includes the text ID, start and end character offset, type, extracted text span
+
 Example output line:
+
 ID123	18	37	ADR	gain a lot of weight
 
 
