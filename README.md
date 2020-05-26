@@ -15,11 +15,13 @@ We use bazel (https://www.bazel.build/) To build an executable jar file for the 
 cd release/v1/java_src/
 
 and build the jar file using the following command:
+
 bazel build ADRMine:adrmine_deploy.jar
 
 A jar file should be built in bazel-bin directory.
 
 The jar file can be executed using the following command:
+
 java -jar bazel-bin/ADRMine/adrmine_deploy.jar <input OPTIONS>
 
 The current version of ADRMine includes the trained models for  ADR extraction. "MainADRMine is the main class related to training and testing ADRMine that expects different options as input arguments, below we listed the options for training and testing:
@@ -41,12 +43,15 @@ The current version of ADRMine includes the trained models for  ADR extraction. 
 **Usage examples**
 
 Example command to run the pertained ADRMine model on a test set of Tweets:
+
 java -jar bazel-bin/ADRMine/adrmine_deploy.jar -dbName ADRMineDB -dbUser <your_username> -dbPass <your_db_pass> -docs test_sentences.tsv -corpusName twitter1 -crfPath /usr/local/Cellar/crfsuite/0.12/bin/crfsuite -forTwitter true
 
 Example command to train ADRMine given the train sentences and gold annotations:
- -train -dbName ADRMineDB -dbUser user1 -dbPass your_db_password -docs train_tweets_id_content.tsv -corpusName twitter -goldAnns train_tweet_annotations.tsv -crfPath /usr/local/Cellar/crfsuite/0.12/bin/crfsuite -forTwitter true
+
+-train -dbName ADRMineDB -dbUser user1 -dbPass your_db_password -docs train_tweets_id_content.tsv -corpusName twitter -goldAnns train_tweet_annotations.tsv -crfPath /usr/local/Cellar/crfsuite/0.12/bin/crfsuite -forTwitter true
 
 Output:
+
 The output file includes the text ID, start and end character offset, type, extracted text span
 
 Example output line:
